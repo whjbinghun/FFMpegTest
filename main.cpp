@@ -114,6 +114,7 @@ int main(int argc, char *argv[])
     pFrame = av_frame_alloc();//创建视频内存
     pFrameRGB = av_frame_alloc();
 
+    ///这里我们改成了 将解码后的YUV数据转换成RGB24
     img_convert_ctx = sws_getContext(pCodecCtx->width, pCodecCtx->height,
             pCodecCtx->pix_fmt, pCodecCtx->width, pCodecCtx->height,
             PIX_FMT_RGB24, SWS_BICUBIC, NULL, NULL, NULL);
